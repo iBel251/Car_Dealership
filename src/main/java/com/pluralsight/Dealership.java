@@ -8,6 +8,12 @@ public class Dealership {
     private String phone;
     private ArrayList<Vehicle> inventory = new ArrayList<>();
 
+    public Dealership() {
+        this.name = "";
+        this.address = "";
+        this.phone = "";
+    }
+
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
@@ -42,4 +48,12 @@ public class Dealership {
     }
 
     public void removeVehicle(Vehicle vehicle){}
+
+    @Override
+    public String toString() {
+        return  name +
+                "|" + address +
+                "|" + phone + "\n" +
+                inventory;
+    }
 }
