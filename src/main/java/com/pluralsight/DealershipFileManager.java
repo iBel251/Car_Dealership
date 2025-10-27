@@ -2,9 +2,7 @@ package com.pluralsight;
 
 import com.sun.source.tree.BreakTree;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class DealershipFileManager {
 
@@ -36,5 +34,16 @@ public class DealershipFileManager {
         return dealership;
     }
 
-    public static void saveDealership(){}
+    public static void saveDealership(Dealership dealership){
+        try(PrintWriter writer = new PrintWriter(new FileWriter("inventory.csv"))){
+            writer.println(dealership.getName()+"|"+dealership.getAddress()+"|"+dealership.getPhone());
+
+            for(Vehicle v : dealership.getInventory()){
+                writer.println(v.toString());
+            }
+            System.out.println("✅ Dealership data successfully saved to inventory.csv");
+        }catch (IOException e){
+            System.out.println("Error reading from file. " + e.getMessage());
+        }
+    }
 }
