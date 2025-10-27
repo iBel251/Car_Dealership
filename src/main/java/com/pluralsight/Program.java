@@ -8,11 +8,14 @@ import java.io.IOException;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Program {
     public static void main(String[] args) {
-        Vehicle v = new Vehicle(1,2009,"toyota","rav4","car","white",10000,12350);
-        Dealership d = new Dealership("abc","address","1231231234");
-        d.addVehicle(v);
-        System.out.println(d);
+//        Vehicle v = new Vehicle(1,2009,"toyota","rav4","car","white",10000,12350);
+//        Dealership d = new Dealership("abc","address","1231231234");
+//        d.addVehicle(v);
+//        System.out.println(d);
+//
+//        System.out.println(DealershipFileManager.getDealership());
+        UserInterface ui = new UserInterface();
 
-        System.out.println(DealershipFileManager.getDealership());
+        ui.display();
     }
 }
